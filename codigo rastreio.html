@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Exclusive Dating Invitation 🔥</title>
+    <style>
+        /* RESET GERAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ESTILO DO CORPO */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* CONTAINER PRINCIPAL */
+        .landing-container {
+            background-image: url('https://cdni.pornpics.com/460/7/668/30616758/30616758_003_955f.jpg'); /* SUBSTITUA PELO LINK DA SUA IMAGEM */
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            max-width: 800px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: white;
+        }
+
+        /* TÍTULO */
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* TEXTO SECUNDÁRIO */
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* BOTÃO DE AÇÃO */
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="landing-container">
+        <h1 id="title">You have been invited to an exclusive dating site.</h1>
+        <p id="paragraph">⚠️ Your access is almost guaranteed! Confirm your email to see photos and chat now.</p>
+        <button class="cta-button" id="cta-button" onclick="redirectUser()">🔥 Release Access Now 🔥</button>
+    </div>
+
+    <script>
+        // LINKS DE AFILIADO 
+        var offerUS = "https://t.slext2.com/212319/8517/0"; // LINK CORRIGIDO PARA OS EUA
+        var offerGlobal = "https://bggcdje.pixls.one/p/ye6cD"; // LINK PARA OUTROS PAÍSES
+
+        // FUNÇÃO PARA DETECTAR A LOCALIZAÇÃO E REDIRECIONAR
+        function redirectUser() {
+            fetch("https://api.db-ip.com/v2/free/self") // API confiável para detectar IP
+                .then(response => response.json())
+                .then(data => {
+                    var countryCode = data.countryCode;
+                    console.log("País detectado:", countryCode); // Verificação no console
+
+                    if (countryCode === "US") {
+                        window.location.href = offerUS;
+                    } else {
+                        window.location.href = offerGlobal;
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao obter a localização:", error);
+                    window.location.href = offerGlobal;
+                });
+        }
+    </script>
+
+</body>
+</html>
