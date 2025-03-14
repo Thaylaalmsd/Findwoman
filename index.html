@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 Oferta Exclusiva 🔥</title>
+    <title>🔥 Exclusive Dating Invitation 🔥</title>
     <style>
         /* RESET GERAL */
         * {
@@ -22,20 +22,22 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         /* CONTAINER PRINCIPAL */
         .landing-container {
             position: relative;
+            z-index: 2;
             width: 100%;
             max-width: 800px;
             padding: 40px 20px;
             border-radius: 10px;
             text-align: center;
-            overflow: hidden;
         }
 
-        /* VÍDEO, GIF OU IMAGEM DE FUNDO */
+        /* FUNDO EM VÍDEO */
         .background-media {
             position: fixed;
             top: 0;
@@ -53,18 +55,8 @@
             margin-bottom: 15px;
             white-space: nowrap;
             overflow: hidden;
+            display: inline-block;
             border-right: 3px solid white;
-            width: 0;
-            animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink {
-            50% { border-color: transparent; }
         }
 
         /* TEXTO SECUNDÁRIO */
@@ -113,47 +105,43 @@
 </head>
 <body>
 
-    <!-- VÍDEO, GIF OU IMAGEM DE FUNDO (SUBSTITUA PELO SEU LINK) -->
+    <!-- FUNDO EM VÍDEO (VÍDEO SENSUAL ELEGANTE PARA O NICHO) -->
     <video class="background-media" autoplay loop muted>
-        <source src="https://cachemd.cdnhost2000xl.com/tthumbs/7/75881.jpg">
+        <source src="https://cdn.pixabay.com/video/2022/10/18/136184-761263657_large.mp4" type="video/mp4">
     </video>
 
     <div class="landing-container">
-        <!-- TÍTULO COM EFEITO DE DIGITAÇÃO -->
-        <h1 id="You have been invited to an exclusive dating site."></h1>
-        
-        <!-- TEXTO SECUNDÁRIO -->
+        <h1 id="title"></h1>
         <p id="paragraph">⚠️ Your access is almost guaranteed! Confirm your email to see photos and chat now.</p>
-        
-        <!-- BOTÃO DE AÇÃO -->
-        <button class="cta-button" id="cta-button" onclick="redirectUser()">🔥 Release Access Now 🔥 🔥</button>
+        <button class="cta-button" id="cta-button" onclick="redirectUser()">🔥 Release Access Now 🔥</button>
     </div>
 
     <script>
-        // LINKS DE AFILIADO (SUBSTITUA PELOS SEUS LINKS)
-        var offerUS = "https://t.slext2.com/212319/8517/0"; // Oferta para usuários dos Estados Unidos
-        var offerGlobal = "https://bggcdje.pixls.one/p/ye6cD"; // Oferta para usuários de outros países
+        // LINKS DE AFILIADO 
+        var offerUS = "https://t.slext2.com/212319/8517/0?bo=2753,2754,2755,2756&po=6456&aff_sub5=SF_006OG000004lmDN"; 
+        var offerGlobal = "https://bggcdje.pixls.one/p/ye6cD"; 
 
-        // FUNÇÃO PARA DETECTAR A LOCALIZAÇÃO E REDIRECIONAR PARA A OFERTA CORRETA
+        // FUNÇÃO PARA DETECTAR A LOCALIZAÇÃO E REDIRECIONAR
         function redirectUser() {
-            fetch("https://ip-api.com/json") // API gratuita para pegar o país do usuário
+            fetch("https://api.db-ip.com/v2/free/self") // API confiável para detectar IP
                 .then(response => response.json())
                 .then(data => {
-                    var countryCode = data.countryCode; // Obtém o código do país (ex: US, BR, FR)
+                    var countryCode = data.countryCode;
+                    console.log("País detectado:", countryCode); // Verificação no console
 
                     if (countryCode === "US") {
-                        window.location.href = offerUS; // Redireciona usuários dos EUA para uma oferta específica
+                        window.location.href = offerUS;
                     } else {
-                        window.location.href = offerGlobal; // Redireciona todos os outros usuários para o smartlink
+                        window.location.href = offerGlobal;
                     }
                 })
                 .catch(error => {
                     console.error("Erro ao obter a localização:", error);
-                    window.location.href = offerGlobal; // Se houver erro, redireciona para o smartlink global
+                    window.location.href = offerGlobal;
                 });
         }
 
-        // FUNÇÃO DE EFEITO DE DIGITAÇÃO NO TÍTULO (SUBSTITUA O TEXTO PARA PERSONALIZAR)
+        // FUNÇÃO DE DIGITAÇÃO AUTOMÁTICA NO TÍTULO
         function typeEffect(element, text, speed) {
             let i = 0;
             function type() {
@@ -161,6 +149,8 @@
                     element.innerHTML += text.charAt(i);
                     i++;
                     setTimeout(type, speed);
+                } else {
+                    element.style.borderRight = "none"; // Remove o cursor piscante
                 }
             }
             type();
@@ -169,7 +159,7 @@
         // EXECUTA O EFEITO DE DIGITAÇÃO AO CARREGAR A PÁGINA
         document.addEventListener("DOMContentLoaded", function() {
             var title = document.getElementById("title");
-            typeEffect(title, "🔥 Oferta Secreta Liberada! 🔥", 100); // Personalize o texto aqui
+            typeEffect(title, "You have been invited to an exclusive dating site.", 100);
         });
 
     </script>
