@@ -1,122 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 Exclusive Dating Invitation 🔥</title>
+    <title>Minha Landing Page</title>
+    
     <style>
-        /* RESET GERAL */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* ESTILO DO CORPO */
+        /* Estilos da página */
         body {
             font-family: Arial, sans-serif;
-            background: #f0f0f0;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* CONTAINER PRINCIPAL */
-        .landing-container {
-            background-image: url('https://cdni.pornpics.com/460/7/668/30616758/30616758_003_955f.jpg'); /* ADICIONE SUA IMAGEM AQUI */
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
             color: white;
+            text-align: center;
         }
-
-        /* TÍTULO */
+        .landing-container {
+            background: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+        }
         h1 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            padding: 0 10px;
+            font-size: 36px;
+            margin-bottom: 20px;
         }
-
-        /* TEXTO SECUNDÁRIO */
         p {
             font-size: 18px;
-            margin-bottom: 25px;
-            padding: 0 15px;
+            margin-bottom: 30px;
         }
-
-        /* BOTÃO DE AÇÃO */
         .cta-button {
-            background-color: #007bff;
+            background-color: #ff0000;
             color: white;
             padding: 15px 30px;
             font-size: 18px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: background-color 0.3s;
         }
-
         .cta-button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-
-        /* RESPONSIVIDADE PARA MOBILE */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 24px;
-            }
-            p {
-                font-size: 16px;
-            }
-            .cta-button {
-                padding: 12px 24px;
-                font-size: 16px;
-            }
+            background-color: #cc0000;
         }
     </style>
 </head>
-<body>
+<body id="page-body">
 
     <div class="landing-container">
-        <h1 id="title">You have been invited to an exclusive dating site.</h1>
-        <p id="paragraph">⚠️ Your access is almost guaranteed! Confirm your email to see photos and chat now.</p>
-        <button class="cta-button" id="cta-button" onclick="redirectUser()">🔥 Release Access Now 🔥</button>
+        <h1 id="title">You have been invited to an exclusive dating site.</h1> <!-- Título -->
+        <p id="paragraph">⚠️ Your access is almost guaranteed! Confirm your email to see photos and chat now</p> <!-- Parágrafo -->
+        <button class="cta-button" id="cta-button" onclick="redirectUser()">Release Access Now 🔥</button> <!-- Botão -->
     </div>
 
     <script>
-        // LINKS DE AFILIADO 
-        var offerUS = "https://t.slext2.com/212319/8517/0"; // LINK PARA OS EUA
-        var offerGlobal = "https://bggcdje.pixls.one/p/ye6cD"; // LINK PARA OUTROS PAÍSES
+        // === CONFIGURAÇÕES QUE VOCÊ PRECISA EDITAR ===
+        
+        var pageTitle = "You have been invited to an exclusive dating site."; // 🔹 TITULO DA LANDING PAGE (Muda o nome da aba do navegador e o título principal)
+        
+        var pageParagraph = "⚠️ Your access is almost guaranteed! Confirm your email to see photos and chat now."; // 🔹 DESCRIÇÃO ABAIXO DO TÍTULO (Use algo chamativo)
+        
+        var buttonText = "Release Access Now 🔥"; // 🔹 TEXTO DO BOTÃO (Ex: "Entrar Agora", "Acesse Já", "Clique Aqui")
+        
+        var backgroundImage = "https://cdni.pornpics.com/460/7/668/30616758/30616758_003_955f.jpg"; 
+        // 🔹 URL DA IMAGEM DE FUNDO (Substitua pelo link de uma imagem que deseja usar)
+        
+        var affiliateLink = "https://t.slext2.com/212319/8517/0"; 
+        // 🔹 SEU LINK DE AFILIADO (Coloque o link para onde o usuário será redirecionado ao clicar no botão)
 
-        // FUNÇÃO PARA DETECTAR A LOCALIZAÇÃO E REDIRECIONAR
+        // === APLICANDO AS CONFIGURAÇÕES NA PÁGINA ===
+        
+        document.title = pageTitle; // Define o título da aba do navegador
+        document.getElementById("title").innerText = pageTitle; // Altera o título na página
+        document.getElementById("paragraph").innerText = pageParagraph; // Altera a descrição
+        document.getElementById("cta-button").innerText = buttonText; // Altera o texto do botão
+        document.getElementById("page-body").style.backgroundImage = "url('" + backgroundImage + "')"; // Aplica a imagem de fundo
+
+        // === FUNÇÃO PARA REDIRECIONAMENTO ===
         function redirectUser() {
-            fetch("https://api.db-ip.com/v2/free/self") // API confiável para detectar IP
-                .then(response => response.json())
-                .then(data => {
-                    var countryCode = data.countryCode;
-                    console.log("País detectado:", countryCode); // Verificação no console
-
-                    if (countryCode === "US") {
-                        window.location.href = offerUS;
-                    } else {
-                        window.location.href = offerGlobal;
-                    }
-                })
-                .catch(error => {
-                    console.error("Erro ao obter a localização:", error);
-                    window.location.href = offerGlobal;
-                });
+            window.location.href = affiliateLink; // Quando o botão for clicado, leva o usuário para o link de afiliado
         }
     </script>
 
