@@ -15,7 +15,8 @@
         /* ESTILO DO CORPO */
         body {
             font-family: Arial, sans-serif;
-            background: #000;
+            background: url('https://source.unsplash.com/1200x800/?sexy,couple') no-repeat center center;
+            background-size: cover;
             color: white;
             display: flex;
             justify-content: center;
@@ -24,6 +25,18 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+        }
+
+        /* SOBREPOSIÇÃO ESCURA PARA MELHORAR VISIBILIDADE */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Deixa o fundo mais escuro */
+            z-index: 1;
         }
 
         /* CONTAINER PRINCIPAL */
@@ -37,26 +50,11 @@
             text-align: center;
         }
 
-        /* FUNDO EM VÍDEO */
-        .background-media {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        /* TÍTULO COM EFEITO DE DIGITAÇÃO */
+        /* TÍTULO */
         #title {
             font-size: 28px;
             font-weight: bold;
             margin-bottom: 15px;
-            white-space: nowrap;
-            overflow: hidden;
-            display: inline-block;
-            border-right: 3px solid white;
         }
 
         /* TEXTO SECUNDÁRIO */
@@ -105,13 +103,8 @@
 </head>
 <body>
 
-    <!-- FUNDO EM VÍDEO (VÍDEO SENSUAL ELEGANTE PARA O NICHO) -->
-    <video class="background-media" autoplay loop muted>
-        <source src="https://cdn.pixabay.com/video/2022/10/18/136184-761263657_large.mp4" type="video/mp4">
-    </video>
-
     <div class="landing-container">
-        <h1 id="title"></h1>
+        <h1 id="title">You have been invited to an exclusive dating site.</h1>
         <p id="paragraph">⚠️ Your access is almost guaranteed! Confirm your email to see photos and chat now.</p>
         <button class="cta-button" id="cta-button" onclick="redirectUser()">🔥 Release Access Now 🔥</button>
     </div>
@@ -140,28 +133,6 @@
                     window.location.href = offerGlobal;
                 });
         }
-
-        // FUNÇÃO DE DIGITAÇÃO AUTOMÁTICA NO TÍTULO
-        function typeEffect(element, text, speed) {
-            let i = 0;
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                } else {
-                    element.style.borderRight = "none"; // Remove o cursor piscante
-                }
-            }
-            type();
-        }
-
-        // EXECUTA O EFEITO DE DIGITAÇÃO AO CARREGAR A PÁGINA
-        document.addEventListener("DOMContentLoaded", function() {
-            var title = document.getElementById("title");
-            typeEffect(title, "You have been invited to an exclusive dating site.", 100);
-        });
-
     </script>
 
 </body>
