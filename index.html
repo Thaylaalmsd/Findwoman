@@ -3,87 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Landing Page</title>
-    
+    <title>🔥 Oferta Exclusiva 🔥</title>
     <style>
-        /* Estilos da página */
-        body {
-            font-family: Arial, sans-serif;
+        /* RESET GERAL */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ESTILO DO CORPO */
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-size: cover;
-            background-position: center;
-            color: white;
             text-align: center;
         }
+
+        /* CONTAINER PRINCIPAL */
         .landing-container {
-            background: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
-            padding: 30px;
-            border-radius: 10px;
+            position: relative;
+            width: 100%;
             max-width: 800px;
+            padding: 40px 20px;
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
         }
-        h1 {
-            font-size: 36px;
+
+        /* VÍDEO, GIF OU IMAGEM DE FUNDO */
+        .background-media {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* TÍTULO COM EFEITO DE DIGITAÇÃO */
+        #title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            width: 0;
+            animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* TEXTO SECUNDÁRIO */
+        #paragraph {
+            font-size: 18px;
             margin-bottom: 20px;
         }
-        p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
+
+        /* BOTÃO DE AÇÃO */
         .cta-button {
-            background-color: #ff0000;
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
             color: white;
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 20px;
+            font-weight: bold;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: pulse 1.5s infinite;
         }
+
         .cta-button:hover {
-            background-color: #cc0000;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 75, 43, 0.8);
+            animation: vibrate 0.3s infinite;
         }
+
+        /* ANIMAÇÃO DE VIBRAÇÃO NO BOTÃO */
+        @keyframes vibrate {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            50% { transform: translateX(2px); }
+            75% { transform: translateX(-2px); }
+            100% { transform: translateX(2px); }
+        }
+
+        /* ANIMAÇÃO DE PULSAÇÃO */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
     </style>
 </head>
-<body id="page-body">
+<body>
+
+    <!-- VÍDEO, GIF OU IMAGEM DE FUNDO (SUBSTITUA PELO SEU LINK) -->
+    <video class="background-media" autoplay loop muted>
+        <source src="https://cachemd.cdnhost2000xl.com/tthumbs/7/75881.jpg">
+    </video>
 
     <div class="landing-container">
-        <h1 id="title">You have been invited to an exclusive dating site.</h1> <!-- Título -->
-        <p id="paragraph">⚠️ Your access is almost guaranteed! Confirm your email to see photos and chat now</p> <!-- Parágrafo -->
-        <button class="cta-button" id="cta-button" onclick="redirectUser()">Release Access Now 🔥</button> <!-- Botão -->
+        <!-- TÍTULO COM EFEITO DE DIGITAÇÃO -->
+        <h1 id="You have been invited to an exclusive dating site."></h1>
+        
+        <!-- TEXTO SECUNDÁRIO -->
+        <p id="paragraph">⚠️ Your access is almost guaranteed! Confirm your email to see photos and chat now.</p>
+        
+        <!-- BOTÃO DE AÇÃO -->
+        <button class="cta-button" id="cta-button" onclick="redirectUser()">🔥 Release Access Now 🔥 🔥</button>
     </div>
 
     <script>
-        // === CONFIGURAÇÕES QUE VOCÊ PRECISA EDITAR ===
-        
-        var pageTitle = "You have been invited to an exclusive dating site."; // 🔹 TITULO DA LANDING PAGE (Muda o nome da aba do navegador e o título principal)
-        
-        var pageParagraph = "⚠️ Your access is almost guaranteed! Confirm your email to see photos and chat now."; // 🔹 DESCRIÇÃO ABAIXO DO TÍTULO (Use algo chamativo)
-        
-        var buttonText = "Release Access Now 🔥"; // 🔹 TEXTO DO BOTÃO (Ex: "Entrar Agora", "Acesse Já", "Clique Aqui")
-        
-        var backgroundImage = "https://cdni.pornpics.com/460/7/668/30616758/30616758_003_955f.jpg"; 
-        // 🔹 URL DA IMAGEM DE FUNDO (Substitua pelo link de uma imagem que deseja usar)
-        
-        var affiliateLink = "https://t.slext2.com/212319/8517/0"; 
-        // 🔹 SEU LINK DE AFILIADO (Coloque o link para onde o usuário será redirecionado ao clicar no botão)
+        // LINKS DE AFILIADO (SUBSTITUA PELOS SEUS LINKS)
+        var offerUS = "https://t.slext2.com/212319/8517/0"; // Oferta para usuários dos Estados Unidos
+        var offerGlobal = "https://bggcdje.pixls.one/p/ye6cD"; // Oferta para usuários de outros países
 
-        // === APLICANDO AS CONFIGURAÇÕES NA PÁGINA ===
-        
-        document.title = pageTitle; // Define o título da aba do navegador
-        document.getElementById("title").innerText = pageTitle; // Altera o título na página
-        document.getElementById("paragraph").innerText = pageParagraph; // Altera a descrição
-        document.getElementById("cta-button").innerText = buttonText; // Altera o texto do botão
-        document.getElementById("page-body").style.backgroundImage = "url('" + backgroundImage + "')"; // Aplica a imagem de fundo
-
-        // === FUNÇÃO PARA REDIRECIONAMENTO ===
+        // FUNÇÃO PARA DETECTAR A LOCALIZAÇÃO E REDIRECIONAR PARA A OFERTA CORRETA
         function redirectUser() {
-            window.location.href = affiliateLink; // Quando o botão for clicado, leva o usuário para o link de afiliado
+            fetch("https://ip-api.com/json") // API gratuita para pegar o país do usuário
+                .then(response => response.json())
+                .then(data => {
+                    var countryCode = data.countryCode; // Obtém o código do país (ex: US, BR, FR)
+
+                    if (countryCode === "US") {
+                        window.location.href = offerUS; // Redireciona usuários dos EUA para uma oferta específica
+                    } else {
+                        window.location.href = offerGlobal; // Redireciona todos os outros usuários para o smartlink
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao obter a localização:", error);
+                    window.location.href = offerGlobal; // Se houver erro, redireciona para o smartlink global
+                });
         }
+
+        // FUNÇÃO DE EFEITO DE DIGITAÇÃO NO TÍTULO (SUBSTITUA O TEXTO PARA PERSONALIZAR)
+        function typeEffect(element, text, speed) {
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // EXECUTA O EFEITO DE DIGITAÇÃO AO CARREGAR A PÁGINA
+        document.addEventListener("DOMContentLoaded", function() {
+            var title = document.getElementById("title");
+            typeEffect(title, "🔥 Oferta Secreta Liberada! 🔥", 100); // Personalize o texto aqui
+        });
+
     </script>
 
 </body>
